@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61291671-72C6-45B0-898B-5E4D90C9B9DF}</ProjectGuid>
+    <ProjectGuid>{15084F12-98BD-453C-89C2-0D34F678ABC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PromotionCS</RootNamespace>
-    <AssemblyName>PromotionCS</AssemblyName>
+    <RootNamespace>Avengers</RootNamespace>
+    <AssemblyName>AvengersCatalog</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,11 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiscountCalculator.cs" />
-    <Compile Include="DiscountTracker.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="ProductCatalog.cs" />
     <Compile Include="Product.cs" />
-    <Compile Include="Promotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
