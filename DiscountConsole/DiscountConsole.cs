@@ -1,28 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Avengers
 {
+    using PromotionCS;
     using DiscountFields = IList<string>;
 
     public static class DiscountConsole
     {
         // given a set of discount fields
         static DiscountFields DefaultDiscountFields = new List<string> { "X", "Y" };
-        static IDictionary<string, double> discountTracker = new Dictionary<string, double>();
-
-        static void AddToDiscountTracker(string field, double discount)
-        {
-            discountTracker.Add(field, discount);
-        }
-
-        static IDictionary<string, double> GetDiscountTracker()
-        {
-            return discountTracker;
-        }
 
         public static KeyValuePair<string, double> EnterField(string field)
         {
@@ -49,15 +37,17 @@ namespace Avengers
             var fieldDiscountPairs = DefaultDiscountFields
                 .Select(field => EnterField(field));
 
+            var discountTracker = new DiscountTracker();
+
             foreach (var fieldDiscountPair in fieldDiscountPairs)
             {
-                AddToDiscountTracker(fieldDiscountPair.Key, fieldDiscountPair.Value);
+                discountTracker.AddToDiscountTracker(fieldDiscountPair.Key, fieldDiscountPair.Value);
             }
 
             // print summary
-            var discountTracker = GetDiscountTracker();
+            var discountTrackerItems = discountTracker.GetDiscountTracker();
 
-            foreach (var fieldDiscountPair in discountTracker)
+            foreach (var fieldDiscountPair in discountTrackerItems)
             {
                 Console.WriteLine("Discount for '{0}': {1}", fieldDiscountPair.Key, fieldDiscountPair.Value);
             }
