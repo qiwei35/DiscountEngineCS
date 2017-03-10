@@ -1,11 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromotionCS", "PromotionCS\PromotionCS.csproj", "{61291671-72C6-45B0-898B-5E4D90C9B9DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{508A360C-F642-47DD-99D3-37A05184610A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvengersOrderTracker", "AvengersOrderTracker\AvengersOrderTracker.csproj", "{0A900D8D-C5CD-4529-B247-3D5FC69BC72C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15084F12-98BD-453C-89C2-0D34F678ABC8} = {15084F12-98BD-453C-89C2-0D34F678ABC8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackerTestProject", "OrderTrackerTestProject\OrderTrackerTestProject.csproj", "{EA329BF0-9B66-43F4-92E4-713C6FCF9EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvengersCatalog", "AvengersCatalog\AvengersCatalog.csproj", "{15084F12-98BD-453C-89C2-0D34F678ABC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,18 @@ Global
 		{508A360C-F642-47DD-99D3-37A05184610A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{508A360C-F642-47DD-99D3-37A05184610A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{508A360C-F642-47DD-99D3-37A05184610A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A900D8D-C5CD-4529-B247-3D5FC69BC72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A900D8D-C5CD-4529-B247-3D5FC69BC72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A900D8D-C5CD-4529-B247-3D5FC69BC72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A900D8D-C5CD-4529-B247-3D5FC69BC72C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA329BF0-9B66-43F4-92E4-713C6FCF9EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA329BF0-9B66-43F4-92E4-713C6FCF9EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA329BF0-9B66-43F4-92E4-713C6FCF9EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA329BF0-9B66-43F4-92E4-713C6FCF9EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15084F12-98BD-453C-89C2-0D34F678ABC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15084F12-98BD-453C-89C2-0D34F678ABC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15084F12-98BD-453C-89C2-0D34F678ABC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15084F12-98BD-453C-89C2-0D34F678ABC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
