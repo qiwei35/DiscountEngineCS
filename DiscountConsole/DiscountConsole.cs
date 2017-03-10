@@ -11,20 +11,29 @@ namespace Avengers
     public static class DiscountConsole
     {
         // given a set of discount fields
-        public static DiscountFields DefaultDiscountFields = new List<string> { "X", "Y" };
+        static DiscountFields DefaultDiscountFields = new List<string> { "X", "Y" };
+        static IDictionary<string, double> discountTracker = new Dictionary<string, double>();
+
+        static void AddToDiscountTracker(string field, double discount)
+        {
+            discountTracker.Add(field, discount);
+        }
+
+        static IDictionary<string, double> GetDiscountTracker()
+        {
+            return discountTracker;
+        }
 
         public static KeyValuePair<string, double> EnterField(string field)
         {
             Console.WriteLine("Enter discount value for {0}:", field);
-
-            var discountValueStr = Console.ReadLine();
 
             double discountValue = 0.0;
             var parseSuccess = false;
 
             while (!parseSuccess)
             {
-                parseSuccess = double.TryParse(discountValueStr, out discountValue);
+                parseSuccess = double.TryParse(Console.ReadLine(), out discountValue);
 
                 if (!parseSuccess)
                 {
@@ -37,9 +46,23 @@ namespace Avengers
 
         public static void Main()
         {
-            var fieldDiscountDict = DefaultDiscountFields
-                .Select(field => EnterField(field))
-                .ToDictionary(fieldDiscountPair => fieldDiscountPair.Key, fieldDiscountPair => fieldDiscountPair.Value);
+            var fieldDiscountPairs = DefaultDiscountFields
+                .Select(field => EnterField(field));
+
+            foreach (var fieldDiscountPair in fieldDiscountPairs)
+            {
+                AddToDiscountTracker(fieldDiscountPair.Key, fieldDiscountPair.Value);
+            }
+
+            // print summary
+            var discountTracker = GetDiscountTracker();
+
+            foreach (var fieldDiscountPair in discountTracker)
+            {
+                Console.WriteLine("Discount for '{0}': {1}", fieldDiscountPair.Key, fieldDiscountPair.Value);
+            }
+
+            //.ToDictionary(fieldDiscountPair => fieldDiscountPair.Key, fieldDiscountPair => fieldDiscountPair.Value);
         }
     }
 }
