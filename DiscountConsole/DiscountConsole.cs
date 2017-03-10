@@ -61,8 +61,6 @@ namespace Avengers
             {
                 Console.WriteLine("Discount for '{0}': {1}", fieldDiscountPair.Key, fieldDiscountPair.Value);
             }
-
-            //.ToDictionary(fieldDiscountPair => fieldDiscountPair.Key, fieldDiscountPair => fieldDiscountPair.Value);
         }
     }
 }
